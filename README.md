@@ -1,7 +1,7 @@
 # ros_bridge_test
 A ROS1 image publisher for testing ROS2-ROS1 bridge. 
 
-*Note: This README assumes you have also cloned the `ros2_bridge_test` repository to your ROS2 workspace.
+*Note: This README assumes you have also cloned the [ros2_bridge_test](https://github.com/amartyadash/ros2_bridge_test) repository to your ROS2 workspace.
 
 ## ROS2-ROS1 Bridge
 Make sure you have the [ROS2-ROS1 bridge](https://github.com/ros2/ros1_bridge) installed, either through a binary installation or a source installation.
