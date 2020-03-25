@@ -9,7 +9,7 @@ void ImagePub::init(ros::NodeHandle& nh) {
 }
 
 void ImagePub::preProcess(cv::Mat& img) {
-    cv::cvtColor(img, pre_processed_frame_, CV_BGR2GRAY); //std::to_string(count_)    pre_processed_frame_.rows, pre_processed_frame_.cols)
+    cv::cvtColor(img, pre_processed_frame_, CV_BGR2GRAY); 
     cv::putText(pre_processed_frame_, std::to_string(count_), cv::Point(100,100),  CV_FONT_HERSHEY_PLAIN, 3, cv::Scalar(0, 0, 255), 3, 8, false);
 
 }
@@ -26,10 +26,6 @@ void ImagePub::run() {
     converted_frame_.image = pre_processed_frame_;
     img_pub_.publish(converted_frame_.toImageMsg());
     count_++;
-
-    // cv::imshow("Image Published", pre_processed_frame_);
-    // cv::waitKey(0);
 }
-
 
 }//ariitk::ros_bridge_test
