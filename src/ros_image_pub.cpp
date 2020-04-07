@@ -3,7 +3,7 @@
 namespace ariitk::ros_bridge_test {
 
 void ImagePub::init(ros::NodeHandle& nh) {
-    img_pub_ = nh.advertise<sensor_msgs::Image>("bridge_image",1);
+    img_pub_ = nh.advertise<sensor_msgs::Image>("bridge_image",20);
     cap_.open(0);
     count_ = 0;
 }
@@ -24,8 +24,13 @@ void ImagePub::run() {
     converted_frame_.encoding = sensor_msgs::image_encodings::MONO8;
     converted_frame_.header.stamp = ros::Time::now();
     converted_frame_.image = pre_processed_frame_;
+    std::stringstream ss;
+    ss <<  count_;
+    converted_frame_.header.frame_id = ss.str();
+    std::cout << converted_frame_.header.frame_id << std::endl;
     img_pub_.publish(converted_frame_.toImageMsg());
+
     count_++;
 }
 
-}//ariitk::ros_bridge_test
+}// namespace ariitk::ros_bridge_test

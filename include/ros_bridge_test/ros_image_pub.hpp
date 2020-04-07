@@ -22,4 +22,4 @@ class ImagePub {
         
 };
 
-}//ariitk::ros_bridge_test
+}// namespace ariitk::ros_bridge_test
