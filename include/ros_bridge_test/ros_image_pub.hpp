@@ -16,9 +16,8 @@ class ImagePub {
         
     private:
         ros::Publisher img_pub_;
-        ros::WallTime time_, initial_time_;
+        ros::WallTime time_;
         int count_;
-        double  time_diff_;
         cv::Mat frame_, pre_processed_frame_;
         cv::VideoCapture cap_;
         
