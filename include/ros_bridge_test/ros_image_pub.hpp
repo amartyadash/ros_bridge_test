@@ -12,14 +12,16 @@ class ImagePub {
     public:
         void init(ros::NodeHandle& nh);
         void preProcess(cv::Mat& img);
-        void run();
+        void run(const ros::WallTimerEvent& event);
         
     private:
         ros::Publisher img_pub_;
+        ros::WallTime time_, initial_time_;
         int count_;
+        double  time_diff_;
         cv::Mat frame_, pre_processed_frame_;
         cv::VideoCapture cap_;
         
 };
 
-}//ariitk::ros_bridge_test
+}// namespace ariitk::ros_bridge_test
